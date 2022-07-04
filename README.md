@@ -77,7 +77,7 @@ To get started, clone the repository into a directory of your choice and ensure 
  - URllib3
  - Google Smart Auto Add-on  
 
-Checkout below idea concept
+Checkout below idea concept:
 ![Idea](./public/Idea-Slideshow.pdf)
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
