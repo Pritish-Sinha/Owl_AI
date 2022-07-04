@@ -1,4 +1,5 @@
 # Owl_AI
+---
 ![Cover](./public/Business_Consultation.jpg)
 
 <br></br>
@@ -78,10 +79,13 @@ To get started, clone the repository into a directory of your choice and ensure 
  - Google Smart Auto Add-on  
 
 ## Developed By
+---
 [![Pritish](./public/robo.png)](https://github.com/Pritish-Sinha)
 [![Khushi](./public/gurl.png)](https://github.com/khushii2206)
 
 Checkout below idea concept:
 ![Idea](./public/Idea-Slideshow.pdf)
+
 ## License
+---
 [MIT](https://choosealicense.com/licenses/mit/)
