@@ -1,5 +1,5 @@
 # Owl_AI
-![Cover](./public/Business Consultation.jpg)
+![Cover](./public/Business_Consultation.jpg)
 
 <br></br>
 **Demonstrating the power of Streamlit.**
@@ -77,5 +77,7 @@ To get started, clone the repository into a directory of your choice and ensure 
  - URllib3
  - Google Smart Auto Add-on  
 
+Checkout below idea concept
+![Idea](./public/Idea-Slideshow.pdf)
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
