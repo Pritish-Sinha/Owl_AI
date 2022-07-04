@@ -77,6 +77,10 @@ To get started, clone the repository into a directory of your choice and ensure 
  - URllib3
  - Google Smart Auto Add-on  
 
+## Developed By
+[![Pritish](./public/robo.png)](https://github.com/Pritish-Sinha)
+[![Khushi](./public/gurl.png)](https://github.com/khushii2206)
+
 Checkout below idea concept:
 ![Idea](./public/Idea-Slideshow.pdf)
 ## License
