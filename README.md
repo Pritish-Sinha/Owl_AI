@@ -1,7 +1,6 @@
 # Owl_AI
 ---
-![Cover](./public/Business_Consultation.jpg)
-
+![Cover](./public/Business-Automation.gif)
 <br></br>
 **Demonstrating the power of Streamlit.**
 <br></br>
