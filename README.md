@@ -76,15 +76,16 @@ To get started, clone the repository into a directory of your choice and ensure 
  - Pytorch
  - URllib3
  - Google Smart Auto Add-on  
+<br>
+Demo notebook at [ESG Miner](https://github.com/Pritish-Sinha/Machine-Leaning-Project/tree/main/ESG_Sentiment_Mining) 
+<br>
+Checkout below idea concept: 
+[Slides](./public/Idea-Slideshow.pdf)
 
 ## Developed By
 ---
 [![Pritish](./public/robo.png)](https://github.com/Pritish-Sinha)
 [![Khushi](./public/gurl.png)](https://github.com/khushii2206)
-
-Checkout below idea concept:
-![Idea](./public/Idea-Slideshow.pdf)
-
 ## License
 ---
 [MIT](https://choosealicense.com/licenses/mit/)
