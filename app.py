@@ -8,7 +8,7 @@ from datetime import datetime
 import pickle
 import itertools
 import plotly.express as px
-from plot_setup import finastra_theme
+from plot_setup import ocean_theme
 from download_data import Data
 import sys
 
@@ -75,20 +75,20 @@ def get_clickable_name(url):
 
 def main(start_data, end_data):
     ###### CUSTOMIZE COLOR THEME ######
-    alt.themes.register("finastra", finastra_theme)
-    alt.themes.enable("finastra")
-    violet, fuchsia = ["#694ED6", "#C137A2"]
+    alt.themes.register("sea", ocean_theme)
+    alt.themes.enable("sea")
+    aero, blue = ["#77B5D9", "#14397D"]
 
 
     ###### SET UP PAGE ######
-    icon_path = os.path.join(".", "raw", "esg_ai_logo.png")
-    st.set_page_config(page_title="ESG AI", page_icon=icon_path,
+    icon_path = os.path.join(".", "raw", "owl.png")
+    st.set_page_config(page_title="OWL AI", page_icon=icon_path,
                        layout='centered', initial_sidebar_state="collapsed")
-    _, logo, _ = st.beta_columns(3)
+    _, logo, _ = st.columns(3)
     logo.image(icon_path, width=200)
     style = ("text-align:center; padding: 0px; font-family: arial black;, "
              "font-size: 400%")
-    title = f"<h1 style='{style}'>ESG<sup>AI</sup></h1><br><br>"
+    title = f"<h1 style='{style}'>OWL<sup>AI</sup></h1><br><br>"
     st.write(title, unsafe_allow_html=True)
 
 
@@ -153,7 +153,7 @@ def main(start_data, end_data):
 
 
         ###### DISPLAY DATA ######
-        URL_Expander = st.beta_expander(f"View {company.title()} Data:", True)
+        URL_Expander = st.expander(f"View {company.title()} Data:", True)
         URL_Expander.write(f"### {len(df_company):,d} Matching Articles for " +
                            company.title())
         display_cols = ["DATE", "SourceCommonName", "Tone", "Polarity",
@@ -172,7 +172,7 @@ def main(start_data, end_data):
 
         ###### CHART: METRIC OVER TIME ######
         st.markdown("---")
-        col1, col2 = st.beta_columns((1, 3))
+        col1, col2 = st.columns((1, 3))
 
         metric_options = ["Tone", "NegativeTone", "PositiveTone", "Polarity",
                           "ActivityDensity", "WordCount", "Overall Score",
@@ -235,7 +235,7 @@ def main(start_data, end_data):
 
 
         ###### CHART: ESG RADAR ######
-        col1, col2 = st.beta_columns((1, 2))
+        col1, col2 = st.columns((1, 2))
         avg_esg = data["ESG"]
         avg_esg.rename(columns={"Unnamed: 0": "Type"}, inplace=True)
         avg_esg.replace({"T": "Overall", "E": "Environment",
@@ -248,7 +248,7 @@ def main(start_data, end_data):
         radar = px.line_polar(radar_df, r="score", theta="Type",
             color="entity", line_close=True, hover_name="Type",
             hover_data={"Type": True, "entity": True, "score": ":.2f"},
-            color_discrete_map={"Industry Average": fuchsia, company: violet})
+            color_discrete_map={"Industry Average": blue, company: aero})
         radar.update_layout(template=None,
                             polar={
                                    "radialaxis": {"showticklabels": False,
@@ -275,7 +275,7 @@ def main(start_data, end_data):
                                "Distribution").transform_density(
                 density='Tone',
                 as_=["Tone", "density"]
-            ).mark_area(opacity=0.5,color="purple").encode(
+            ).mark_area(opacity=0.5,color="blue").encode(
                     x=alt.X('Tone:Q', scale=alt.Scale(domain=(-10, 10))),
                     y='density:Q',
                     tooltip=[alt.Tooltip("Tone", format=".3f"),
@@ -319,7 +319,7 @@ def main(start_data, end_data):
         color_f = lambda f: f"Company: {company.title()}" if f == company else (
             "Connected Company" if f in neighbors.values else "Other Company")
         embeddings["colorCode"] = embeddings.company.apply(color_f)
-        point_colors = {company: violet, "Connected Company": fuchsia,
+        point_colors = {company: aero, "Connected Company": aero,
                         "Other Company": "lightgrey"}
         fig_3d = px.scatter_3d(embeddings, x="0", y="1", z="2",
                                color='colorCode',
