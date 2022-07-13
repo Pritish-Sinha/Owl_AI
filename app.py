@@ -81,7 +81,7 @@ def main(start_data, end_data):
 
 
     ###### SET UP PAGE ######
-    icon_path = os.path.join(".", "raw", "owl.png")
+    icon_path = os.path.join(".", "public", "owl.png")
     st.set_page_config(page_title="OWL AI", page_icon=icon_path,
                        layout='centered', initial_sidebar_state="collapsed")
     _, logo, _ = st.columns(3)
