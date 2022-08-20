@@ -23,7 +23,7 @@ There has been a tremendous amount of research around ESG investing. Harvard Law
   3. Good ESG companies generally have higher valuations, EVA growth, size, and returns</li>
 
 
-<br></br>
+
 ### ESG Reporting
 ---
 Currently 90% of S&P 500 companies publish annual sustainability reports, which can range from as little as 30 pages to over 200 pages. There is not one clear reporting format, but there are some general reporting guidelines. For example, [Nasdaq](https://www.nasdaq.com/ESG-Guide) publishes their own guide to help companies report meaningful information to stakeholders. Analysts leverage these reports to understand company trends and themes. Developing an investment thesis is a painstaking, manual process that can take weeks for a single company.
