@@ -15,7 +15,7 @@ import sys
 import metadata_parser
 
 ####### CACHED FUNCTIONS ######
-@st.cache_data(show_spinner=False, suppress_st_warning=True)
+@st.cache_resource(show_spinner=False, suppress_st_warning=True)
 def filter_company_data(df_company, esg_categories, start, end):
     #Filter E,S,G Categories
     comps = []
