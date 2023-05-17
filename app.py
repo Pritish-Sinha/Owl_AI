@@ -28,7 +28,6 @@ def filter_company_data(df_company, esg_categories, start, end):
     return df_company
 
 
-          allow_output_mutation=True)
 def load_data(start_data, end_data):
     data = Data().read(start_data, end_data)
     companies = data["data"].Organization.sort_values().unique().tolist()
