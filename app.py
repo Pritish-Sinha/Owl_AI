@@ -241,7 +241,11 @@ def main(start_data, end_data):
         avg_esg.rename(columns={"Unnamed: 0": "Type"}, inplace=True)
         avg_esg.replace({"T": "Overall", "E": "Environment",
                          "S": "Social", "G": "Governance"}, inplace=True)
-        avg_esg["Industry Average"] = avg_esg.mean(axis=1).apply(str)
+        # Convert the numeric columns to numeric data types
+        avg_esg = avg_esg.apply(pd.to_numeric, errors="ignore")
+        # Calculate the mean for the numeric columns
+        avg_esg["Industry Average"] = avg_esg.select_dtypes(include=[np.number]).mean(axis=1).apply(str)
+
 
         radar_df = avg_esg[["Type", company, "Industry Average"]].melt("Type",
             value_name="score", var_name="entity")
