@@ -1,20 +1,20 @@
 from colour import Color
 import altair as alt
 
-def ocean_theme():
+def finastra_theme():
 
     ###### COLORS ######
-    aero = "#77B5D9"
-    blue = "#14397D"
+    violet = "#694ED6"
+    fuchsia = "#C137A2"
     white = "#FFFFFF"
 
-    aero_c = Color(aero)
-    blue_c = Color(blue)
+    violet_c = Color(violet)
+    fuchsia_c = Color(fuchsia)
     white_c = Color(white)
 
-    cont = [str(c) for c in blue_c.range_to(aero_c, 50)]
-    div = [str(c) for c in blue_c.range_to(white_c, 25)] + [str(c) for c in
-           white_c.range_to(aero_c, 25)]
+    cont = [str(c) for c in fuchsia_c.range_to(violet_c, 50)]
+    div = [str(c) for c in fuchsia_c.range_to(white_c, 25)] + [str(c) for c in
+           white_c.range_to(violet_c, 25)]
     disc = ["#C137A2", "#694ED6", "#26D07C", "#009CBD", "#F04E98",
             "#ED8B00", "#FFD100", "#F9423A", "#C7C8CA", "#414141"]
 
@@ -40,28 +40,28 @@ def ocean_theme():
 
             # Chart Types
             "arc": {
-                "fill": aero,
+                "fill": violet,
                 "tooltip": True},
             "area": {
-                "stroke": blue,
-                "fill": aero,
+                "stroke": fuchsia,
+                "fill": violet,
                 "tooltip": True},
             "line": {
-                "stroke": blue,
-                "point": aero,
+                "stroke": fuchsia,
+                "point": violet,
                 "stroke_width": 3,
                 "tooltip": True},
             "path": {
-                "stroke": blue,
+                "stroke": fuchsia,
                 "tooltip": True},
             "rect": {
-                "fill": aero,
+                "fill": violet,
                 "tooltip": True},
             "shape": {
-                "stroke": blue,
+                "stroke": fuchsia,
                 "tooltip": True},
             "symbol": {
-                "fill": aero,
+                "fill": violet,
                 "size": 30,
                 "tooltip": True},
 
