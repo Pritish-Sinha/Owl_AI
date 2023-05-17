@@ -250,12 +250,13 @@ def main(start_data, end_data):
         radar_df = avg_esg[["Type", company, "Industry Average"]].melt("Type",
             value_name="score", var_name="entity")
 
-        # Concatenate the DataFrame with a copy of itself
-        radar_df = pd.concat([radar_df, radar_df.iloc[[0]]], ignore_index=True)
+        # Append a row to the DataFrame using loc
+        radar_df.loc[len(radar_df)] = radar_df.iloc[0]
         # Reset the index of the DataFrame
         radar_df.reset_index(drop=True, inplace=True)
-        # Plot the line polar chart
-        radar = px.line_polar(radar_df, r="score", theta="Type", line_close=True, template="plotly_dark", width=800, height=600)
+
+# Plot the line polar chart
+radar = px.line_polar(radar_df, r="score", theta="Type", line_close=True, template="plotly_dark", width=800, height=600)
 
         radar.update_layout(template=None,
                             polar={
