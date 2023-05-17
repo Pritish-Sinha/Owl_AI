@@ -31,14 +31,10 @@ class Data:
                 "data": pd.read_csv(self.data, parse_dates=["DATE"]),
                 "embed": pd.read_csv(self.embeddings),
                 "overall_score": pd.read_csv(self.daily_esg,
-                                  index_col="date", parse_dates=["date"],
-                                 infer_datetime_format=True),
-                "E_score": pd.read_csv(self.e_score, parse_dates=["date"],
-                                 infer_datetime_format=True, index_col="date"),
-                "S_score": pd.read_csv(self.s_score, parse_dates=["date"],
-                                 infer_datetime_format=True, index_col="date"),
-                "G_score": pd.read_csv(self.g_score, parse_dates=["date"],
-                                 infer_datetime_format=True, index_col="date"),
+                                  index_col="date", parse_dates=["date"]),
+                "E_score": pd.read_csv(self.e_score, parse_dates=["date"], index_col="date"),
+                "S_score": pd.read_csv(self.s_score, parse_dates=["date"], index_col="date"),
+                "G_score": pd.read_csv(self.g_score, parse_dates=["date"], index_col="date"),
                 "ESG": pd.read_csv(self.avg_esg),
                 }
         # Dat column to date (not timestamp)
