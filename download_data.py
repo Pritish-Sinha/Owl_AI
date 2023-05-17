@@ -28,7 +28,7 @@ class Data:
         data_path = os.path.join(".", "Data", dir_name)
         self.paths(data_path)
         data = {"conn": pd.read_csv(self.connections),
-                "data": pd.(self.data, parse_dates=["DATE"]),
+                "data": pd.read_csv(self.data, parse_dates=["DATE"]),
                 "embed": pd.read_csv(self.embeddings),
                 "overall_score": pd.read_csv(self.daily_esg,
                                   index_col="date", parse_dates=["date"],
