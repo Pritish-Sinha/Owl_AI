@@ -252,6 +252,8 @@ def main(start_data, end_data):
 
         # Concatenate the DataFrame with a copy of itself
         radar_df = pd.concat([radar_df, radar_df.iloc[[0]]], ignore_index=True)
+        # Reset the index of the DataFrame
+        radar_df.reset_index(drop=True, inplace=True)
         # Plot the line polar chart
         radar = px.line_polar(radar_df, r="score", theta="Type", line_close=True, template="plotly_dark", width=800, height=600)
 
