@@ -254,10 +254,9 @@ def main(start_data, end_data):
         radar_df = pd.concat([radar_df, radar_df.iloc[0]])
         # Plot the line polar chart
         radar = px.line_polar(radar_df, r="score", theta="Type", line_close=True, template="plotly_dark", width=800, height=600)
-
-            color="entity", line_close=True, hover_name="Type",
-            hover_data={"Type": True, "entity": True, "score": ":.2f"},
-            color_discrete_map={"Industry Average": fuchsia, company: violet})
+        color="entity", line_close=True, hover_name="Type",
+        hover_data={"Type": True, "entity": True, "score": ":.2f"},
+        color_discrete_map={"Industry Average": fuchsia, company: violet})
         radar.update_layout(template=None,
                             polar={
                                    "radialaxis": {"showticklabels": False,
