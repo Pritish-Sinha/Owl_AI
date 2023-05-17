@@ -23,7 +23,7 @@ def filter_company_data(df_company, esg_categories, start, end):
         X = df_company[df_company[i] == True]
         comps.append(X)
     df_company = pd.concat(comps)
-        df_company = df_company[df_company.DATE.between(start, end)]
+    df_company = df_company[df_company.DATE.between(start, end)]
      return df_company
 
 
