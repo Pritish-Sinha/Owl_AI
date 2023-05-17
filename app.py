@@ -57,7 +57,11 @@ def get_melted_frame(data_dict, frame_names, keepcol=None, dropcol=None):
 def filter_on_date(df, start, end, date_col="DATE"):
     start_date = pd.Timestamp(start).date()
     end_date = pd.Timestamp(end).date()
-    df = df[(df[date_col].dt.date >= start_date) & (df[date_col].dt.date <= end_date)]
+    # Convert the column to datetime if needed
+    df[date_col] = pd.to_datetime(df[date_col], errors='coerce')
+    # Filter the DataFrame based on the date range
+    df = df[(df[date_col].notnull()) & (df[date_col].dt.date >= start_date) & (df[date_col].dt.date <= end_date)]
+
     return df
 
 
